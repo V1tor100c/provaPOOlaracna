@@ -8,12 +8,12 @@ class pata {
 public:
     
     pata();
-    int mover(int x,int y, int z);
+    
     ~pata();
 
 private:
 
-    int _x, _y, _z = 0;
+
 
 };
 
