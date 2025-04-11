@@ -3,13 +3,13 @@
 
 #include "laranca.hpp"
 
-class pata {
+class Pata {
 
 public:
     
-    pata();
+    Pata();
     
-    ~pata();
+    ~Pata();
 
 private:
 
