@@ -10,3 +10,8 @@ void Laracna::moveLaracna(){
 void Laracna::localizaLaracna(){
     localiza.posiçãoAtual();
 }
+
+void Laracna::movaAte(){
+   moveLaracna();
+   localizaLaracna();
+}
