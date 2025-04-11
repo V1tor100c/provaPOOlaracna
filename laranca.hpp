@@ -13,6 +13,7 @@ public:
     Localizacao localiza;
     void moveLaracna();
     void localizaLaracna();
+    void movaAte();
     ~Laracna();
 
 private:
