@@ -11,9 +11,7 @@ public:
     Laracna();
     controle_posicao ControlePosicao;
     localizacao localiza;
-    void mover(int _x,int _y, int _z);
-    int posicao_atual = 0;
-    // ~Laracna();
+    ~Laracna();
 
 private:
 
