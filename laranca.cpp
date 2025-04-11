@@ -8,5 +8,5 @@ void Laracna::moveLaracna(){
 }
 
 void Laracna::localizaLaracna(){
-    .posição atual();
+    localizacao.posiçãoAtual();
 }
