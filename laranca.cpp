@@ -4,5 +4,5 @@ Laracna::Laracna(){
 }
 
 void Laracna::moveLaracna(){
-
+     controlePosicao.movePatas();
 }
