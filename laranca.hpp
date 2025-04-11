@@ -11,6 +11,7 @@ public:
     Laracna();
     controle_posicao ControlePosicao;
     localizacao localiza;
+    void moveLaracna();
     ~Laracna();
 
 private:
