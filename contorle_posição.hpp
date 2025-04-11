@@ -1,13 +1,15 @@
 #ifndef CONTROLE_POSICAO_HPP
 #define CONTROLE_POSOCAO_HPP
 
-#include "laranca.hpp"
+#include "pata.hpp"
 
 class Controle_Posicao {
 
     public:
 
         Controle_Posicao();
+        Pata p[4];
+        void movePatas();
         ~Controle_Posicao();
 
     private:
