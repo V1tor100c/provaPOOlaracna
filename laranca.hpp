@@ -9,8 +9,8 @@ class Laracna {
 public:
 
     Laracna();
-    controle_posicao ControlePosicao;
-    localizacao localiza;
+    Controle_Posicao controlePosicao;
+    Localizacao localiza;
     void moveLaracna();
     ~Laracna();
 
