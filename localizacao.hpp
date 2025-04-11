@@ -7,7 +7,7 @@ class localizacao{
 public:
 
     localizacao();
-    int read_localization(int x,int y, int z);
+    
     ~localizacao();
 
 private:
