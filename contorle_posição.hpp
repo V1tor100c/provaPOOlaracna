@@ -3,12 +3,12 @@
 
 #include "laranca.hpp"
 
-class controle_posicao {
+class Controle_Posicao {
 
     public:
 
-        controle_posicao();
-        ~controle_posicao();
+        Controle_Posicao();
+        ~Controle_Posicao();
 
     private:
 
