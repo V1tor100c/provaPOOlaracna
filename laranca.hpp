@@ -11,13 +11,15 @@ public:
     Laracna();
     Controle_Posicao controlePosicao;
     Localizacao localiza;
-    void moveLaracna();
-    void localizaLaracna();
-    void movaAte();
+    void moveLaracna(int, int, int);
+    void localizaLaracna(int, int, int);
+    void movaAte(int, int, int);
     ~Laracna();
 
 private:
 
+    int = atualx, atualy, atualx;
+    int = movex, movey, movez;
 
 };
 
