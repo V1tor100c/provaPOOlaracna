@@ -8,7 +8,7 @@ class Pata {
 public:
     
     Pata();
-    
+    void move();
     ~Pata();
 
 private:
