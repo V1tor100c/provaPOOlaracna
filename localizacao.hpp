@@ -7,7 +7,7 @@ class Localizacao{
 public:
 
     Localizacao();
-    void posiçãoAtual();
+    int posiçãoAtual(int, int, int);
     ~Localizacao();
 
 private:

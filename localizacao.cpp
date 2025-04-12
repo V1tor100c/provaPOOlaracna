@@ -1,8 +1,14 @@
 #include "localizacao.hpp"
+#include <iostream>
 
-Localizacao::Localização(){
+using namespace std;
+
+Localizacao::Localizacao(){
 }
 
-void Localizacao::posicaoAtual(){
-    cout << "Tô aqui" << endl;
+int Localizacao::posicaoAtual(int x, int y, int z){
+
+    cout << "Eu estou aqui " << x << ", " << y << ", " << z << endl;
+
+    return x, y, z;
 }

@@ -1,8 +1,8 @@
 #include "pata.hpp"
 
-Para::Pata(){
+Pata::Pata(){
 }
 
-void Para::move(){
+void Pata::move(){
      cout << "tck tck tkc tkc tck" << endl;
 }

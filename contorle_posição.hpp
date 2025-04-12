@@ -5,14 +5,14 @@
 
 class Controle_Posicao {
 
-    public:
+public:
 
-        Controle_Posicao();
-        Pata p[4];
-        void movePatas();
-        ~Controle_Posicao();
+    Controle_Posicao();
+    // Pata p;
+    void movePatas();
+    ~Controle_Posicao();
 
-    private:
+private:
 
 };
 
