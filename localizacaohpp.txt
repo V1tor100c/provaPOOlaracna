@@ -1,0 +1,29 @@
+#ifndef LOCALIZACAO_HPP
+#define LOCAIZACAO_HPP
+
+#include "laranca.hpp"
+
+class Localizacao{
+public:
+
+    Localizacao();
+    // int posiçãoAtual(int, int, int);
+    ~Localizacao();
+
+private:
+
+    
+
+};
+
+#endif
+
+Localizacao::Localizacao(){
+}
+
+// int Localizacao::posicaoAtual(int x, int y, int z){
+
+//     cout << "Eu estou aqui " << x << ", " << y << ", " << z << endl;
+
+//     return x, y, z;
+// }

@@ -28,3 +28,7 @@ private:
 };
 
 #endif
+
+Laracna::Laracna(){
+    cout << "Contrutor laracna" << endl;
+}

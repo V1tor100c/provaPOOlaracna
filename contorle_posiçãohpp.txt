@@ -17,3 +17,6 @@ private:
 };
 
 #endif
+
+Controle_Posicao::Controle_Posicao(){
+}
