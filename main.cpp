@@ -2,6 +2,8 @@
 
 using namespace std;
 
+#ifndef PATA_HPP
+#define PATA_HPP
 class Pata {
 
 public:
@@ -13,6 +15,7 @@ public:
 private:
 
 };
+#endif
 
 Pata::Pata(){}
 
@@ -22,6 +25,8 @@ void Pata::move(int p[3]){
 
 Pata::~Pata(){}
 
+#ifndef LOCALIZACAO_HPP
+#define LOCAIZACAO_HPP
 class Localizacao{
 public:
 
@@ -32,6 +37,7 @@ public:
 private: 
 
 };
+#endif
 
 Localizacao::Localizacao(){}
 
@@ -42,6 +48,8 @@ void Localizacao::posicaoAtual(int p[3]){
 
 Localizacao::~Localizacao(){}
 
+#ifndef CONTORLE_POSICAO_HPP
+#define CONTORLE_POSICAO_HPP
 class Controle_Posicao {
 
 public:
@@ -54,6 +62,7 @@ public:
 private:
 
 };
+#endif
 
 Controle_Posicao::Controle_Posicao(){}
 
@@ -63,8 +72,11 @@ void Controle_Posicao::movePatas(int posicao[3]){
         pata[i].move(posicao);
     }
 }
+
 Controle_Posicao::~Controle_Posicao(){}
 
+#ifndef LARACNA_HPP  
+#define LARACNA_HPP
 class Laracna {
 
 public:
@@ -83,6 +95,7 @@ private:
     int movePosition[3];
 
 };
+#endif
 
 Laracna::Laracna(){}
 
