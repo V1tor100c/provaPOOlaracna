@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string>
+#include <vector>
 
 using namespace std;
 
@@ -9,7 +11,9 @@ class Pata {
 public:
     
     Pata();
-    void move(int[3]);
+    void move(const vector <int>& p);
+    void esticar();
+    void encolher();
     ~Pata();
 
 private:
@@ -19,8 +23,16 @@ private:
 
 Pata::Pata(){}
 
-void Pata::move(int p[3]){
-    cout << "tck tck tkc tkc tck" << endl;
+void Pata::move(const vector <int>& p){
+    cout << "Movendo para: x=" << p[0] << " y=" << p[1] << " z=" << p[2] << endl;
+}
+
+void Pata::esticar(){
+    cout << "Esticando ..." << endl;
+}
+
+void Pata::encolher(){
+    cout << "Encolhendo ..." << endl;
 }
 
 Pata::~Pata(){}
@@ -31,7 +43,7 @@ class Localizacao{
 public:
 
     Localizacao();
-    void posicaoAtual(int[3]);
+    void localize(const vector <int>&);
     ~Localizacao();
 
 private: 
@@ -41,9 +53,9 @@ private:
 
 Localizacao::Localizacao(){}
 
-void Localizacao::posicaoAtual(int p[3]){
+void Localizacao::localize(const vector <int>& p){
 
-    cout << "Eu estou aqui x=" << p[0] << " y=" << p[1] << " z=" << p[2] << endl;
+    cout << "Robô Localizado" << endl;
 }
 
 Localizacao::~Localizacao(){}
@@ -56,7 +68,8 @@ public:
 
     Controle_Posicao();
     Pata pata[4];
-    void movePatas(int[3]);
+    void movePatas(const vector <int>& posicao);
+    void movePatas(string);
     ~Controle_Posicao();
 
 private:
@@ -66,11 +79,27 @@ private:
 
 Controle_Posicao::Controle_Posicao(){}
 
-void Controle_Posicao::movePatas(int posicao[3]){
+void Controle_Posicao::movePatas(const vector <int>& posicao){
 
     for(int i = 0; i < 4; i++){
         pata[i].move(posicao);
     }
+}
+
+void Controle_Posicao::movePatas(string pose){
+    if (pose == "esticar"){
+        for(int i = 0; i < 4; i++){
+            pata[i].esticar();
+        }
+        cout << "Laracna esta esticada" << endl;
+    }
+    else if(pose == "encolher"){
+        for(int i = 0; i < 4; i++){
+            pata[i].encolher();
+        }
+        cout << "Laracna esta encolhida" << endl;
+    }
+
 }
 
 Controle_Posicao::~Controle_Posicao(){}
@@ -86,18 +115,22 @@ public:
     Localizacao localiza;
     void moveLaracna();
     void localizaLaracna();
-    void movaAte(int, int, int);
+    void mexer(const vector <int>&);
+    void mexer(string);
     ~Laracna();
 
 private:
 
-    int atualPosition[3];
-    int movePosition[3];
+    vector <int> atualPosition;
+    vector <int> movePosition;
 
 };
 #endif
 
-Laracna::Laracna(){}
+Laracna::Laracna(){
+    atualPosition.resize(3);
+    movePosition.resize(3);
+}
 
 void Laracna::moveLaracna(){
 
@@ -107,25 +140,38 @@ void Laracna::moveLaracna(){
 void Laracna::localizaLaracna(){
 
     atualPosition[0] = movePosition[0];
-    localiza.posicaoAtual(movePosition);
-
+    atualPosition[1] = movePosition[1];
+    atualPosition[2] = movePosition[2];
+    localiza.localize(atualPosition);
 }
 
-void Laracna::movaAte(int x, int y, int z){
-   movePosition[0] = x;
-   movePosition[1] = y;
-   movePosition[2] = z;
-   moveLaracna();
-   localizaLaracna();
+void Laracna::mexer(const vector <int>& p){
+
+    for (int i = 0; i < 3; i++){
+        movePosition[i] = p[i];
+    }
+    moveLaracna();
+    localizaLaracna();
+}
+
+void Laracna::mexer(string pose){
+    controlePosicao.movePatas(pose);
 }
 
 Laracna::~Laracna(){}
 
+vector <int> destino;
+// destino.resize(3);
+
 int main() {
 
     Laracna laracna;
-    laracna.movaAte(5, 4, 7);
-    laracna.movaAte(1, 2, 3);
+    destino = {1, 2, 3};
+    laracna.mexer(destino);
+    destino = {15, 25, 19};
+    laracna.mexer(destino);
+    laracna.mexer("encolher");
+    laracna.mexer("esticar");
 
     return 0;
 }
